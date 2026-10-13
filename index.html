@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 9월 모바일 패션 쇼핑 앱 시장 리뷰</title>
+<style>
+  :root{
+    --bg:#faf9f6; --panel:#ffffff; --panel-2:#f4f2ec; --ink:#17181d; --ink-dim:#5c5f6b; --ink-faint:#9497a3;
+    --line:#e7e4da; --teal:#0d9488; --violet:#6d4fd6; --amber:#c2760c; --rose:#d6436a; --blue:#2563eb; --green:#16a34a;
+    --shadow: 0 1px 2px rgba(20,20,20,0.04), 0 8px 24px -12px rgba(20,20,20,0.10);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing:antialiased; }
+  .num{font-family:'Space Grotesk','Noto Sans KR',sans-serif;}
+  a{color:inherit;}
+
+  .topnav{ position:sticky; top:0; z-index:50; background:rgba(250,249,246,0.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .topnav-inner{ max-width:1180px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:14px 28px; overflow-x:auto; white-space:nowrap; }
+  .brand{font-weight:900; font-size:14.5px; letter-spacing:-0.01em; flex-shrink:0;}
+  .brand .dot{color:var(--teal);}
+  .navlinks{display:flex; gap:16px; font-size:12.2px; color:var(--ink-dim);}
+  .navlinks a{text-decoration:none; padding:4px 0; border-bottom:2px solid transparent; flex-shrink:0;}
+  .navlinks a:hover{color:var(--ink); border-color:var(--teal);}
+
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  section{padding:60px 0;}
+  .eyebrow{ font-family:'Space Grotesk',sans-serif; font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--teal); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  .eyebrow::before{content:""; width:18px; height:2px; background:var(--teal); display:inline-block; border-radius:2px;}
+  h2.h{font-size:27px; font-weight:900; letter-spacing:-0.01em; margin:0 0 10px;}
+  h3.h3{font-size:17px; font-weight:800; margin:0 0 8px;}
+  p.lead{font-size:14.5px; color:var(--ink-dim); line-height:1.7; max-width:none; margin:0 0 26px;}
+  p.body-txt{font-size:13.8px; color:var(--ink-dim); line-height:1.8; margin:0 0 16px;}
+  p.body-txt b{color:var(--ink); font-weight:700;}
+  .divider{height:1px; background:var(--line); border:0; margin:0;}
+
+  .hero{padding:72px 0 36px;}
+  .hero-badges{display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;}
+  .pill{font-size:11px; font-family:'Space Grotesk',sans-serif; padding:5px 11px; border-radius:999px; border:1px solid var(--line); color:var(--ink-dim); background:var(--panel);}
+  .hero h1{font-size:42px; line-height:1.24; font-weight:900; letter-spacing:-0.015em; margin:0 0 16px; max-width:780px;}
+  .hero h1 span{color:var(--teal);}
+  .hero-sub{font-size:14.5px; color:var(--ink-dim); line-height:1.75; max-width:none; margin-bottom:6px;}
+  .hero-meta{font-size:12.5px; color:var(--ink-faint); margin-top:22px; display:flex; gap:18px; flex-wrap:wrap;}
+  .oneliner{ margin-top:24px; background:var(--panel-2); border-left:3px solid var(--teal); border-radius:10px; padding:16px 20px; font-size:13.5px; color:var(--ink-dim); line-height:1.75; }
+  .oneliner b{color:var(--ink);}
+
+  .kpi-row{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:30px;}
+  .kpi-card{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px 16px 15px; box-shadow:var(--shadow);}
+  .kpi-card .lab{font-size:11px; color:var(--ink-faint); margin-bottom:9px; line-height:1.4; min-height:28px;}
+  .kpi-card .v{font-size:20px; font-weight:700; letter-spacing:-0.01em; line-height:1.25;}
+  .kpi-card .v small{font-size:11.5px; font-weight:500; color:var(--ink-faint);}
+  .kpi-card .chg{font-size:11.5px; font-weight:700; margin-top:6px;}
+  .up{color:var(--teal);} .down{color:var(--rose);}
+
+  .panel{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:26px 28px; box-shadow:var(--shadow);}
+  .grid-2{display:grid; grid-template-columns:1.15fr 0.85fr; gap:22px;}
+  .grid-2.even{grid-template-columns:1fr 1fr;}
+  .grid-2.rev{grid-template-columns:0.85fr 1.15fr;}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .chart-box{position:relative; width:100%; display:flex; flex-direction:column;}
+  .mychart{width:100%; flex:1 1 auto; min-height:0; display:block;}
+  .mychart svg{display:block; overflow:visible;}
+  .mc-legend{display:flex; justify-content:flex-end; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--ink-dim); margin-bottom:8px;}
+  .mc-legend span.sw{display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:-1px;}
+  .mc-tip{position:absolute; pointer-events:none; background:#17181d; color:#fff; font-size:11.5px; padding:6px 10px; border-radius:8px; opacity:0; transition:opacity .1s; z-index:40; white-space:nowrap; transform:translate(-50%,-100%);}
+
+  .callout{font-size:13.5px; color:var(--ink-dim); line-height:1.75; background:var(--panel-2); border-radius:12px; padding:16px 18px; margin-top:16px;}
+  .callout b{color:var(--ink); font-weight:700;}
+  .callout.teal{border-left:3px solid var(--teal);} .callout.rose{border-left:3px solid var(--rose);}
+  .callout.amber{border-left:3px solid var(--amber);} .callout.violet{border-left:3px solid var(--violet);}
+
+  table.rt{width:100%; border-collapse:collapse; font-size:13.2px;}
+  table.rt th{text-align:left; font-size:10.8px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-faint); font-weight:600; padding:0 8px 10px; border-bottom:1px solid var(--line);}
+  table.rt td{padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:middle;}
+  table.rt tr:last-child td{border-bottom:none;}
+  table.rt tr.me td{background:rgba(214,67,106,0.06);}
+  table.rt td.rank{font-family:'Space Grotesk',sans-serif; color:var(--ink-faint); width:26px;}
+  table.rt td.name{font-weight:700;}
+  table.rt td.num{font-family:'Space Grotesk',sans-serif; text-align:right; white-space:nowrap;}
+  table.rt td.center{text-align:center; font-family:'Space Grotesk',sans-serif;}
+
+  .duel-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .duel-card{border:1px solid var(--line); border-radius:16px; padding:18px 20px; background:var(--panel);}
+  .duel-card.win{border-color:rgba(13,148,136,0.35); box-shadow:0 0 0 1px rgba(13,148,136,0.12) inset;}
+  .duel-card.win2{border-color:rgba(214,67,106,0.35); box-shadow:0 0 0 1px rgba(214,67,106,0.12) inset;}
+  .duel-card.me{border-color:rgba(214,67,106,0.45); box-shadow:0 0 0 1px rgba(214,67,106,0.15) inset;}
+  .duel-card .crown{display:inline-block; font-size:10.2px; font-weight:700; letter-spacing:0.04em; padding:3px 10px; border-radius:999px; margin-bottom:10px;}
+  .crown.mau{background:rgba(13,148,136,0.12); color:var(--teal);}
+  .crown.time{background:rgba(214,67,106,0.12); color:var(--rose);}
+  .crown.me{background:var(--rose); color:#fff;}
+  .duel-card .app{font-size:15.5px; font-weight:900; margin-bottom:12px;}
+  .metric-row{display:flex; justify-content:space-between; align-items:baseline; padding:7px 0; border-bottom:1px dashed var(--line); font-size:12.5px;}
+  .metric-row:last-child{border-bottom:none;}
+  .metric-row .l{color:var(--ink-faint);}
+  .metric-row .v{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px;}
+
+  .flow-row{display:flex; align-items:center; gap:12px; padding:9px 0;}
+  .flow-row .lbl{width:190px; font-size:12.8px; flex-shrink:0;}
+  .flow-row .track{flex:1; height:10px; border-radius:6px; background:var(--panel-2); overflow:hidden;}
+  .flow-row .fill{height:100%; border-radius:6px;}
+  .flow-row .pct{width:50px; text-align:right; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12.5px;}
+
+  .sm-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .sm-card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px 16px 8px;}
+  .sm-card .top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2px;}
+  .sm-card .name{font-size:13px; font-weight:700;}
+  .sm-card .chg{font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700;}
+  .sm-card .sub{font-size:10.8px; color:var(--ink-faint); margin-bottom:8px; line-height:1.5;}
+
+  .demo-row{display:grid; grid-template-columns:96px 1fr 40px; gap:10px; align-items:center; padding:7px 0;}
+  .demo-row .app-name{font-size:12.5px; font-weight:700;}
+  .demo-row .stack{display:flex; height:16px; border-radius:4px; overflow:hidden; background:var(--panel-2);}
+  .demo-row .pct{font-family:'Space Grotesk',sans-serif; font-size:11.5px; color:var(--ink-faint); text-align:right;}
+  .legend-row{display:flex; gap:16px; font-size:11.5px; color:var(--ink-dim); margin:14px 0 4px;}
+  .legend-sw{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px;}
+
+  .versus-row{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:6px;}
+  .versus-card{background:#fff; border-radius:14px; padding:16px 18px; border:1px solid var(--line);}
+  .versus-card.me{border:1.5px solid var(--rose); box-shadow:0 0 0 1px rgba(214,67,106,0.12) inset;}
+  .versus-card .nm{font-size:13.5px; font-weight:800; margin-bottom:10px; display:flex; align-items:center; gap:6px;}
+  .versus-card .nm .tag-me{font-size:9.5px; background:var(--rose); color:#fff; padding:2px 7px; border-radius:999px; font-weight:700;}
+  .versus-card .row{display:flex; justify-content:space-between; font-size:12px; padding:5px 0; border-bottom:1px dashed var(--line);}
+  .versus-card .row:last-child{border-bottom:none;}
+  .versus-card .row .v{font-family:'Space Grotesk',sans-serif; font-weight:700;}
+
+  .pair-row{display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid var(--line);}
+  .pair-row:last-child{border-bottom:none;}
+  .pair-row .names{width:190px; font-size:13px; flex-shrink:0;}
+  .pair-row .names b{font-weight:700;}
+  .pair-row .bars{flex:1; display:flex; flex-direction:column; gap:6px;}
+  .pair-bar{display:flex; align-items:center; gap:8px; font-size:11px; color:var(--ink-faint);}
+  .pair-bar .track{flex:1; height:9px; border-radius:5px; background:var(--panel-2); overflow:hidden;}
+  .pair-bar .fill{height:100%; border-radius:5px;}
+  .pair-bar .pct{width:44px; text-align:right; font-family:'Space Grotesk',sans-serif; color:var(--ink); font-weight:700;}
+
+  .insight-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  .insight-card{background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--teal); border-radius:12px; padding:18px 20px; box-shadow:var(--shadow);}
+  .insight-card .k{font-size:12px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;}
+  .insight-card .v{font-size:13.5px; color:var(--ink-dim); line-height:1.7;}
+  .insight-card:nth-child(2){border-left-color:var(--violet);} .insight-card:nth-child(2) .k{color:var(--violet);}
+  .insight-card:nth-child(3){border-left-color:var(--amber);} .insight-card:nth-child(3) .k{color:var(--amber);}
+  .insight-card:nth-child(4){border-left-color:var(--rose);} .insight-card:nth-child(4) .k{color:var(--rose);}
+  .insight-card:nth-child(5){border-left-color:var(--blue);} .insight-card:nth-child(5) .k{color:var(--blue);}
+
+  .wfocus-wrap{ background: linear-gradient(155deg, #fff8f2 0%, #fdf3ef 55%, #faf9f6 100%); border:1px solid #f0ddd0; border-radius:24px; padding:40px 40px 36px; position:relative; }
+  .wfocus-tag{ position:absolute; top:-14px; left:36px; background:var(--rose); color:#fff; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; padding:6px 14px; border-radius:999px; box-shadow:0 6px 16px -4px rgba(214,67,106,0.5); }
+  .wfocus-kpis{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0 26px; }
+  .wfocus-kpi{ background:#fff; border:1px solid #f0ddd0; border-radius:14px; padding:16px 18px; }
+  .wfocus-kpi .lab{ font-size:11.5px; color:var(--ink-faint); margin-bottom:8px; }
+  .wfocus-kpi .v{ font-size:22px; font-weight:700; }
+  .wfocus-kpi .v .vs{ font-size:13px; color:var(--ink-faint); font-weight:500; }
+  .subsec{margin-top:34px; padding-top:30px; border-top:1px dashed var(--line);}
+  .subsec:first-of-type{margin-top:24px;}
+  .num-tag{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:6px; background:var(--rose); color:#fff; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; margin-right:8px;}
+
+  .watch-table{width:100%; border-collapse:collapse; font-size:13px;}
+  .watch-table th{text-align:left; font-size:10.8px; text-transform:uppercase; color:var(--ink-faint); font-weight:600; padding:0 10px 10px; border-bottom:1px solid var(--line);}
+  .watch-table td{padding:14px 10px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.6;}
+  .watch-table td:first-child{font-weight:700; width:26%;}
+  .watch-table td:nth-child(2){width:22%; color:var(--ink-dim);}
+
+  table.src{width:100%; border-collapse:collapse; font-size:12.3px;}
+  table.src td{padding:10px 4px; border-bottom:1px solid var(--line); color:var(--ink-dim);}
+  table.src td:first-child{font-weight:700; color:var(--ink); width:260px;}
+  .foot-note{font-size:11.5px; color:var(--ink-faint); margin-top:20px; line-height:1.7;}
+  .section-label{font-family:'Space Grotesk',sans-serif; font-size:12px; color:var(--ink-faint); margin-bottom:6px;}
+  footer{padding:46px 0 90px;}
+
+  @media (max-width:980px){
+    .kpi-row{grid-template-columns:repeat(2,1fr);}
+    .grid-2, .grid-2.rev, .grid-2.even{grid-template-columns:1fr;}
+    .grid-3{grid-template-columns:repeat(2,1fr);}
+    .sm-grid{grid-template-columns:repeat(2,1fr);}
+    .duel-grid, .versus-row{grid-template-columns:1fr;}
+    .insight-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:30px;}
+    .flow-row .lbl, .pair-row .names{width:130px;}
+    .wfocus-wrap{padding:26px 18px 22px;}
+    .wfocus-kpis{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">패션쇼핑앱·8월 리뷰<span class="dot">·</span>2026</div>
+    <div class="navlinks">
+      <a href="#overview">개요</a>
+      <a href="#industry">업종현황</a>
+      <a href="#ranking">순위변동</a>
+      <a href="#growth">MoM·YoY</a>
+      <a href="#duel">지그재그vs퀸잇</a>
+      <a href="#crossuse">교차사용</a>
+      <a href="#wfocus" style="color:var(--rose); font-weight:700;">★ W컨셉</a>
+      <a href="#insight">인사이트</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="overview">
+    <div class="hero-badges">
+      <span class="pill">FASHION</span><span class="pill">2026.09 MONTHLY</span><span class="pill">11 APPS · 실측 데이터</span>
+    </div>
+    <h1>2026년 9월<br>모바일 패션 쇼핑 앱<br><span>월간 리뷰</span></h1>
+    <p class="hero-sub">분석 대상: W컨셉(자사)·무신사·29CM·지그재그·에이블리·SSF SHOP·LFmall·신세계V·퀸잇·HAGO·EQL</p>
+    <div class="hero-meta"><span>기준 2026.09(전월·전년 동월 대비)</span><span>출처: 모바일인덱스 INSIGHT</span><span>MI MCP 실시간 조회</span></div>
+
+    <div class="kpi-row">
+      <div class="kpi-card"><div class="lab">패션/의류 업종 전체 MAU</div><div class="v num">1,844.2<small>만 명</small></div><div class="chg up">▲ MoM +2.1% <span style="color:var(--ink-faint); font-weight:500;">· YoY +7.8%</span></div></div>
+      <div class="kpi-card"><div class="lab">업종 1인당 월평균 사용시간</div><div class="v num">1.22<small>시간</small></div><div class="chg down">▲ MoM +11.3% <span style="color:var(--ink-faint); font-weight:500;">· YoY -9.8%</span></div></div>
+      <div class="kpi-card" style="border-color:rgba(214,67,106,0.35);"><div class="lab">W컨셉(자사) 순위 / MoM</div><div class="v num" style="color:var(--rose);">9위 <small>· 104.5만</small></div><div class="chg up">▲ MoM +6.6%</div></div>
+      <div class="kpi-card"><div class="lab">업종 5위로 상승 · 참고 앱</div><div class="v num" style="color:var(--violet);">KREAM</div><div class="chg" style="color:var(--ink-dim); white-space:nowrap;">MoM +6.7% · YoY +15.2%</div></div>
+      <div class="kpi-card"><div class="lab">가장 뚜렷한 반등</div><div class="v num" style="color:var(--teal);">신세계V<small></small></div><div class="chg" style="color:var(--ink-dim); white-space:nowrap;">MoM +24.0% · YoY +19.4%</div></div>
+    </div>
+
+    <div class="oneliner"><b>한 줄 요약</b> — 패션/의류 업종 MAU가 두 달 연속 하락 끝에 9월 1,844만 2천 명으로 반등했습니다(MoM +2.1%, YoY +7.8%). 경쟁사 데이터 자체가 밝히듯 FW 시즌 진입이 업종 전반의 트래픽을 끌어올린 결과입니다. MoM 기준으로 11개 앱 중 9개가 플러스였고, <b>신세계V(+24.0%)·SSF SHOP(+15.3%)·LFmall(+9.5%)</b>이 가장 큰 폭으로 올랐습니다. 반면 <b>퀸잇(-3.1%)</b>과 <b>HAGO(-9.2%)</b>는 마이너스였고, 특히 HAGO는 9/15 패션플러스 통합 운영 발표 이후 10/1 신규 주문·가입이 중단되며 서비스 종료를 앞두고 있습니다. YoY로는 <b>지그재그(MAU +22.0%·신규 Install +44.6%)</b>와 <b>LFmall(신규 Install +100.6%)</b>이 신규 설치 수요까지 크게 늘며 사용자 기반을 넓혔습니다.</div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- INDUSTRY -->
+  <section id="industry">
+    <div class="eyebrow">Industry Overview · MoM</div>
+    <h2 class="h">1. 업종 전체 현황 — 두 달 만의 반등, FW 시즌 진입 효과</h2>
+    <p class="lead">패션/의류 업종 전체 MAU는 8월 1,806만 3천 명에서 9월 1,844만 2천 명으로 <b>MoM +2.1%</b> 늘며 6~8월의 조정 국면을 끝냈습니다. 작년 9월(1,710만 4천 명) 대비로는 <b>YoY +7.8%</b>로 여전히 견조합니다 — 6월 정점(1,890만 9천 명)에는 아직 못 미치지만, 가을·겨울(FW) 시즌 진입과 함께 업종 전반이 다시 상승 궤도에 올라선 모습입니다.</p>
+
+    <div class="panel">
+      <div class="section-label">업종 전체 MAU 추이 (2025.09 – 2026.09)</div>
+      <div class="chart-box" style="height:300px;"><div id="chartTrend" class="mychart"></div></div>
+    </div>
+
+    <div class="grid-3" style="margin-top:18px;">
+      <div class="panel">
+        <div class="section-label">총 사용시간</div>
+        <div style="font-size:22px; font-weight:700; margin:8px 0 2px;" class="num">1,977.9만 → 2,248.5만<small style="font-size:13px; color:var(--ink-faint);"> 시간</small></div>
+        <div class="chg up" style="font-size:12.5px;">▲ MoM +13.7% <span style="color:var(--rose);">▼ YoY -2.8%</span></div>
+      </div>
+      <div class="panel">
+        <div class="section-label">1인당 월평균 사용시간</div>
+        <div style="font-size:22px; font-weight:700; margin:8px 0 2px;" class="num">1.10h → 1.22h</div>
+        <div class="chg up" style="font-size:12.5px;">▲ MoM +11.3% <span style="color:var(--rose);">▼ YoY -9.8%</span></div>
+      </div>
+      <div class="panel">
+        <div class="section-label">사용시간 급상승 TOP5 구성</div>
+        <div style="font-size:15px; font-weight:700; margin:8px 0 2px;">이번엔 메이저 앱이 싹쓸이</div>
+        <div class="chg" style="font-size:12.5px; color:var(--ink-dim);">무신사·에이블리·지그재그·29CM·신상마켓 — 업종 11개 메이저 앱 중 4곳이 이름을 올림</div>
+      </div>
+    </div>
+    <div class="callout teal" style="margin-top:18px;">8월엔 KREAM·LFmall·더한섬닷컴 등 니치 버티컬·리세일 플랫폼만 사용시간 급상승 TOP5에 올랐는데, 9월엔 구성이 달라졌습니다. <b>무신사(사용시간 MoM +31.5%, +79.5만h)가 업종 전체 1위 상승폭</b>을 기록했고, 지그재그(+13.7%)·29CM(+18.8%)·에이블리(+12.5%)도 TOP5에 들어 5자리 중 4자리를 분석 대상 메이저 앱이 차지했습니다.</div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- RANKING -->
+  <section id="ranking">
+    <div class="eyebrow">Ranking Update · 2026.09</div>
+    <h2 class="h">2. 순위 변동 — KREAM이 29CM을 제치고 업종 5위로</h2>
+    <p class="lead">추적 대상 11개 앱 사이의 MAU 순위는 7월 이후 석 달째, 사용시간 순위는 8월 이후 두 달째 동일하게 유지되고 있습니다. 다만 업종 전체 순위(참고 앱 포함)에서는 변화가 있었습니다 — <b>29CM이 리세일 플랫폼 KREAM에 업종 5위를 내주고 6위로 한 단계 내려왔습니다.</b> 두 앱의 격차는 8,102명(0.4%)에 불과해 다음 달 다시 뒤집힐 수 있는 초박빙입니다.</p>
+
+    <div class="grid-2">
+      <div class="panel">
+        <div class="section-label">MAU 순위 (2026.09) — KREAM 5위로 상승, 29CM 6위</div>
+        <table class="rt">
+          <thead><tr><th>순위</th><th>앱</th><th style="text-align:right;">MAU</th><th style="text-align:center;">전월比</th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(13,148,136,0.06);"><td class="rank">1</td><td class="name">에이블리</td><td class="num">647.6만</td><td class="center" style="color:var(--teal); font-weight:700;">+3.8%</td></tr>
+            <tr><td class="rank">2</td><td class="name">무신사</td><td class="num">622.7만</td><td class="center" style="color:var(--teal);">+3.4%</td></tr>
+            <tr><td class="rank">3</td><td class="name">지그재그</td><td class="num">400.2만</td><td class="center" style="color:var(--teal); font-weight:700;">+6.7%</td></tr>
+            <tr><td class="rank">4</td><td class="name">퀸잇</td><td class="num">302.0만</td><td class="center" style="color:var(--rose);">-3.1%</td></tr>
+            <tr><td class="rank" style="color:var(--violet); font-weight:700;">5<span style="font-size:10px;">▲</span></td><td class="name">KREAM<span style="color:var(--ink-faint); font-weight:400;">*</span></td><td class="num">201.8만</td><td class="center" style="color:var(--ink-faint);">-</td></tr>
+            <tr><td class="rank" style="color:var(--rose); font-weight:700;">6<span style="font-size:10px;">▼</span></td><td class="name">29CM</td><td class="num">201.0만</td><td class="center" style="color:var(--teal);">+1.8%</td></tr>
+            <tr><td class="rank">7</td><td class="name">SHEIN<span style="color:var(--ink-faint); font-weight:400;">*</span></td><td class="num">164.7만</td><td class="center" style="color:var(--ink-faint);">-</td></tr>
+            <tr><td class="rank">8</td><td class="name">유니클로<span style="color:var(--ink-faint); font-weight:400;">*</span></td><td class="num">144.9만</td><td class="center" style="color:var(--ink-faint);">-</td></tr>
+            <tr class="me"><td class="rank">9</td><td class="name">W컨셉 (자사)</td><td class="num">104.5만</td><td class="center" style="color:var(--teal); font-weight:700;">+6.6%</td></tr>
+            <tr><td class="rank">10</td><td class="name">SSF SHOP</td><td class="num">102.1만</td><td class="center" style="color:var(--teal); font-weight:700;">+15.3%</td></tr>
+          </tbody>
+        </table>
+        <div class="foot-note" style="margin-top:10px;">*KREAM·SHEIN·유니클로는 분석 대상 외 참고 앱</div>
+      </div>
+      <div class="panel">
+        <div class="section-label">사용시간 순위 (2026.09) — 11개 앱 간 순서는 8월과 동일</div>
+        <table class="rt">
+          <thead><tr><th>순위</th><th>앱</th><th style="text-align:right;">총 사용시간</th><th style="text-align:center;">전월比 순위</th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(13,148,136,0.06);"><td class="rank">1</td><td class="name">에이블리</td><td class="num">514.7만h</td><td class="center">1위 유지</td></tr>
+            <tr><td class="rank">2</td><td class="name">무신사</td><td class="num">332.0만h</td><td class="center">2위 유지</td></tr>
+            <tr><td class="rank">3</td><td class="name">지그재그</td><td class="num">262.6만h</td><td class="center">3위 유지</td></tr>
+            <tr><td class="rank">4</td><td class="name">퀸잇</td><td class="num">215.0만h</td><td class="center">4위 유지</td></tr>
+            <tr><td class="rank">5</td><td class="name">29CM</td><td class="num">111.3만h</td><td class="center">5위 유지</td></tr>
+            <tr class="me"><td class="rank" style="color:var(--teal); font-weight:700;">6<span style="font-size:10px;">▲</span></td><td class="name">W컨셉 (자사)</td><td class="num">70.2만h</td><td class="center" style="color:var(--teal); font-weight:700;">7위→6위</td></tr>
+          </tbody>
+        </table>
+        <div class="callout violet" style="margin-top:14px;">지그재그(262.6만h)와 퀸잇(215.0만h)의 격차는 22.1%로, 8월(0.8%)의 초박빙 승부에서 크게 벌어졌습니다. 다만 1인당 평균 이용시간으로 보면 퀸잇(약 42.7분)이 지그재그(약 39.4분)보다 여전히 높습니다 — 규모는 지그재그가 더 앞섰지만, 밀도는 여전히 퀸잇이 근소하게 우세합니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- GROWTH MoM/YoY -->
+  <section id="growth">
+    <div class="eyebrow">Growth · MoM vs YoY</div>
+    <h2 class="h">3. 11개 앱 성장률 — 9개 앱이 MoM·YoY 동시 플러스</h2>
+    <p class="lead">YoY(전년 동월 대비)는 HAGO를 제외한 <b>10개 앱이 플러스</b>입니다. MoM(전월 대비)으로 보면 <b>퀸잇·HAGO 2개 앱만 마이너스</b>이고 나머지 9개 앱은 모두 플러스입니다 — 8월엔 플러스 전환 앱이 5개였던 것과 비교하면, FW 시즌 진입 효과가 업종 전반에 걸쳐 거의 예외 없이 퍼진 셈입니다.</p>
+    <div class="panel">
+      <div class="chart-box" style="height:340px;"><div id="chartGrowth" class="mychart"></div></div>
+    </div>
+    <div class="callout amber" style="margin-top:16px;"><b>이번 달 성장률의 1위는 신세계V입니다.</b> MoM +24.0%·YoY +19.4%로 11개 앱 중 유일하게 양쪽 모두 20% 안팎의 고성장을 기록했습니다. SSF SHOP(MoM+15.3%·YoY+15.5%)도 균형 잡힌 2위권 성장세를 보였습니다. 반대로 <b>HAGO는 MoM(-9.2%)·YoY(-34.9%) 모두 11개 앱 중 최저</b>로, 9/15 발표된 패션플러스 통합·서비스 종료 수순 속에서 가장 큰 낙폭을 보였습니다. 퀸잇은 MoM만 소폭 마이너스(-3.1%)일 뿐 YoY는 +13.2%로 여전히 견조해, HAGO와는 성격이 다른 '숨 고르기'에 가깝습니다.</div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ZIGZAG vs QUEENIT -->
+  <section id="duel">
+    <div class="eyebrow">Head to Head · 3위 경쟁의 결말</div>
+    <h2 class="h">4. 지그재그 vs 퀸잇 — 초박빙 승부, 한 달 만에 완전히 갈렸다</h2>
+    <p class="lead">8월엔 사용시간 기준 지그재그(231.0만h)와 퀸잇(229.2만h)의 격차가 단 0.8%에 불과한 '공동 3위'급 승부였습니다. 9월엔 <b>지그재그가 262.6만h로 퀸잇(215.0만h)을 22.1% 앞서며 격차를 단숨에 벌렸습니다.</b> MAU에서도 지그재그(400.2만 명)가 퀸잇(302.0만 명)을 32.5% 앞서며 두 지표 모두에서 우위를 확정했습니다.</p>
+    <div class="duel-grid" style="margin-bottom:22px;">
+      <div class="duel-card win">
+        <span class="crown time">격차 확대 · MAU·사용시간 모두 우위</span>
+        <div class="app">지그재그</div>
+        <div class="metric-row"><span class="l">MAU (2026.09)</span><span class="v">400.2만 명 <span style="color:var(--teal); font-size:11px;">MoM +6.7%</span></span></div>
+        <div class="metric-row"><span class="l">총 사용시간</span><span class="v">262.6만 시간</span></div>
+        <div class="metric-row"><span class="l">1인당 월평균(추정)</span><span class="v">약 39.4분</span></div>
+        <div class="metric-row"><span class="l">MAU YoY 성장률</span><span class="v">+22.0% <span style="color:var(--ink-faint); font-size:11px;">· 신규 Install YoY +44.6%</span></span></div>
+      </div>
+      <div class="duel-card" style="border-color:rgba(124,107,176,0.35);">
+        <span class="crown" style="background:rgba(124,107,176,0.12); color:var(--violet);">4위 격차 확대 · 밀도는 여전히 우위</span>
+        <div class="app">퀸잇</div>
+        <div class="metric-row"><span class="l">MAU (2026.09)</span><span class="v">302.0만 명 <span style="color:var(--rose); font-size:11px;">MoM -3.1%</span></span></div>
+        <div class="metric-row"><span class="l">총 사용시간</span><span class="v">215.0만 시간</span></div>
+        <div class="metric-row"><span class="l">1인당 월평균(추정)</span><span class="v">약 42.7분</span></div>
+        <div class="metric-row"><span class="l">MAU YoY 성장률</span><span class="v">+13.2%</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="section-label">MAU 추이 비교 (2025.09 – 2026.09, 월간)</div>
+      <div class="chart-box" style="height:280px;"><div id="chartDuel" class="mychart"></div></div>
+    </div>
+    <div class="callout violet" style="margin-top:16px;">8월까지는 두 앱이 사용시간 기준 엎치락뒤치락했지만, 9월엔 지그재그가 MAU·사용시간·YoY 성장률 모든 지표에서 앞섰습니다. 신규 Install도 지그재그가 YoY +44.6%로 LFmall(+100.6%)에 이어 11개 앱 중 2위인 반면, 퀸잇은 YoY -41.4%로 감소했습니다(경쟁사 데이터 자체 요약 수치 기반). 퀸잇은 1인당 사용시간(약 42.7분)에서는 여전히 지그재그(약 39.4분)를 앞서, 완전히 밀린 것은 아닙니다.</div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CROSS USAGE -->
+  <section id="crossuse">
+    <div class="eyebrow">Cross-App Usage · 2026.09</div>
+    <h2 class="h">5. 앱 교차 사용 현황</h2>
+    <p class="lead">W컨셉 사용자의 경쟁앱 교차 사용 비율은 <b>29CM(58.17%) &gt; 무신사(52.79%) &gt; 지그재그(46.26%) &gt; 에이블리(39.62%)</b> 순입니다. YoY로 보면 EQL을 제외한 전 앱에서 교차율이 늘었고, 특히 29CM(+7.12%p)·지그재그(+6.19%p) 상승폭이 가장 큽니다. MoM으로는 지그재그(+1.79%p)가 최대 상승을 기록했습니다.</p>
+
+    <div class="panel">
+      <div class="section-label">W컨셉 사용자의 경쟁앱 교차 사용률 추이</div>
+      <table class="rt" style="margin-top:8px;">
+        <thead><tr><th>경쟁앱</th><th style="text-align:right;">2026.09</th><th style="text-align:right;">MoM</th><th style="text-align:right;">YoY</th><th>해석</th></tr></thead>
+        <tbody>
+          <tr><td class="name">29CM</td><td class="num">58.17%</td><td class="num" style="color:var(--teal);">+1.30%p</td><td class="num" style="color:var(--rose);">+7.12%p</td><td style="font-size:12.5px; color:var(--ink-dim);">3사 중 교차율 최고 — [이구패션위크]·[어텀런웨이] 등 유사 FW 시즌 프로모션 중첩으로 YoY 상승 뚜렷</td></tr>
+          <tr><td class="name">무신사</td><td class="num">52.79%</td><td class="num" style="color:var(--teal);">+1.40%p</td><td class="num" style="color:var(--rose);">+2.51%p</td><td style="font-size:12.5px; color:var(--ink-dim);">MoM·YoY 모두 완만한 상승</td></tr>
+          <tr><td class="name">지그재그</td><td class="num">46.26%</td><td class="num" style="color:var(--teal); font-weight:700;">+1.79%p</td><td class="num" style="color:var(--rose);">+6.19%p</td><td style="font-size:12.5px; color:var(--ink-dim);">[브랜드 페스타]로 디자이너 브랜드 할인·가을 신상품 선보이며 MoM 최대 상승</td></tr>
+          <tr><td class="name">에이블리</td><td class="num">39.62%</td><td class="num" style="color:var(--teal);">+1.64%p</td><td class="num" style="color:var(--rose);">+3.55%p</td><td style="font-size:12.5px; color:var(--ink-dim);">꾸준한 상승 흐름 지속</td></tr>
+          <tr><td class="name">SSF SHOP</td><td class="num">20.41%</td><td class="num" style="color:var(--teal);">+1.20%p</td><td class="num" style="color:var(--rose);">+3.27%p</td><td style="font-size:12.5px; color:var(--ink-dim);">브랜드 패션 종합몰 간 교차 탐색 지속 확대</td></tr>
+          <tr><td class="name">퀸잇</td><td class="num">11.72%</td><td class="num" style="color:var(--rose); font-weight:700;">-1.12%p</td><td class="num" style="color:var(--rose);">+0.88%p</td><td style="font-size:12.5px; color:var(--ink-dim);">MoM 감소 (EQL도 -0.24%p)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout amber" style="margin-top:14px;">MoM 기준으로는 지그재그(+1.79%p)·에이블리(+1.64%p)·무신사(+1.40%p) 순으로 상승폭이 컸던 반면, 퀸잇(-1.12%p)·EQL(-0.24%p)만 소폭 감소했습니다. HAGO는 9월 기준 업종 순위 2,500위 밖으로 하락해 교차 분석 대상에서 제외됐습니다.</div>
+    </div>
+
+    <div class="panel" style="margin-top:22px;">
+      <div class="section-label">주요 경쟁앱 단독/중복 사용자 — YoY 증가율 비교 (W컨셉 기준)</div>
+      <p class="body-txt" style="margin-top:8px;">YoY 기준으로 W컨셉과 경쟁앱 간 <b>중복 사용자 증가율이 전체 사용자 증가율을 웃도는</b> 조합은 29CM 하나뿐입니다. 나머지 네 조합은 모두 중복 사용자 증가율이 전체 사용자 증가율에 못 미쳐, W컨셉과의 중첩이 아니라 경쟁앱 자체의 단독 사용자 성장이 전체 증가를 이끈 것으로 보입니다.</p>
+      <table class="rt" style="margin-top:8px;">
+        <thead><tr><th>조합</th><th style="text-align:right;">중복 사용자 YoY</th><th style="text-align:right;">전체 사용자 YoY</th><th style="text-align:right;">차이</th></tr></thead>
+        <tbody>
+          <tr><td class="name">W컨셉 & 29CM</td><td class="num">+14.2%</td><td class="num" style="color:var(--ink-faint);">+9.4%</td><td class="num" style="color:var(--teal);">+4.8%p</td></tr>
+          <tr><td class="name">W컨셉 & 퀸잇</td><td class="num">+8.4%</td><td class="num" style="color:var(--ink-faint);">+9.6%</td><td class="num" style="color:var(--rose);">-1.2%p</td></tr>
+          <tr><td class="name">W컨셉 & 지그재그</td><td class="num">+15.7%</td><td class="num" style="color:var(--ink-faint);">+16.9%</td><td class="num" style="color:var(--rose);">-1.2%p</td></tr>
+          <tr><td class="name">W컨셉 & 에이블리</td><td class="num">+10.1%</td><td class="num" style="color:var(--ink-faint);">+13.7%</td><td class="num" style="color:var(--rose);">-3.7%p</td></tr>
+          <tr><td class="name">W컨셉 & 무신사</td><td class="num">+5.2%</td><td class="num" style="color:var(--ink-faint);">+10.0%</td><td class="num" style="color:var(--rose);">-4.7%p</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- W CONCEPT FOCUS -->
+  <section id="wfocus">
+    <div class="wfocus-wrap">
+      <div class="wfocus-tag">OUR COMPANY FOCUS</div>
+
+      <div class="eyebrow" style="color:var(--rose);">Deep Dive · 자사</div>
+      <h2 class="h">6. 자사(W컨셉) 심층 분석</h2>
+      <p class="lead">W컨셉은 8월 98만 명에서 9월 104만 5천 명으로 <b>MoM +6.6%</b> 증가하며 8월(-3.4%)의 하락세에서 반등했습니다. 이는 편집숍 계열 3사(W컨셉·무신사·29CM) 중 가장 큰 MoM 증가율입니다. 다만 YoY는 +0.2%로 거의 변화가 없어, 작년 9월 수준을 회복한 정도로 해석하는 게 정확합니다.</p>
+
+      <div class="wfocus-kpis">
+        <div class="wfocus-kpi"><div class="lab">W컨셉 MAU (2026.09)</div><div class="v num">104.5<span class="vs">만 명 · 업종 9위 유지</span></div></div>
+        <div class="wfocus-kpi"><div class="lab">MoM (8월→9월)</div><div class="v num" style="color:var(--teal);">+6.6<span class="vs">% · 3사 중 MoM 최대 증가율</span></div></div>
+        <div class="wfocus-kpi"><div class="lab">YoY (전년 9월 대비)</div><div class="v num" style="color:var(--amber);">+0.2<span class="vs">% · 29CM(+16.5%)·무신사(+11.3%)에 못 미침</span></div></div>
+      </div>
+
+      <div class="panel" style="margin-bottom:18px;">
+        <div class="section-label">W컨셉 MAU 추이 (2025.09 – 2026.09)</div>
+        <div class="chart-box" style="height:220px;"><div id="chartWSolo" class="mychart"></div></div>
+      </div>
+
+      <div class="versus-row">
+        <div class="versus-card me">
+          <div class="nm">W컨셉 <span class="tag-me">OUR APP</span></div>
+          <div class="row"><span>MAU</span><span class="v">104.5만</span></div>
+          <div class="row"><span>MoM / YoY</span><span class="v">+6.6% / +0.2%</span></div>
+          <div class="row"><span>사용시간 순위</span><span class="v">6위(▲1단계) · 70.2만h</span></div>
+        </div>
+        <div class="versus-card">
+          <div class="nm">무신사</div>
+          <div class="row"><span>MAU</span><span class="v">622.7만</span></div>
+          <div class="row"><span>MoM / YoY</span><span class="v">+3.4% / +11.3%</span></div>
+          <div class="row"><span>사용시간 순위</span><span class="v">2위 · 332.0만h</span></div>
+        </div>
+        <div class="versus-card">
+          <div class="nm">29CM</div>
+          <div class="row"><span>MAU</span><span class="v">201.0만</span></div>
+          <div class="row"><span>MoM / YoY</span><span class="v">+1.8% / +16.5%</span></div>
+          <div class="row"><span>사용시간 순위</span><span class="v">5위 · 111.3만h</span></div>
+        </div>
+      </div>
+      <div class="callout rose" style="margin-top:18px;">편집숍 계열 3사 모두 MoM 플러스를 기록했습니다. W컨셉(+6.6%)이 가장 큰 폭으로 뛰었고 무신사(+3.4%)·29CM(+1.8%)도 함께 상승했습니다. 다만 YoY 기준으로는 W컨셉(+0.2%)이 29CM(+16.5%)·무신사(+11.3%)에 뚜렷하게 못 미쳐, 두 자릿수 성장률을 보이는 경쟁사들과는 체감 성장 속도의 차이가 있습니다. 9월의 반등이 추세 전환인지는 다음 달 YoY 흐름을 더 지켜봐야 합니다.</div>
+
+      <!-- DAU & Promotion calendar -->
+      <div class="subsec">
+        <h3 class="h3"><span class="num-tag">1</span>DAU로 보면 — 3사 모두 증가, 무신사는 추석 연휴에도 최고치 경신</h3>
+        <p class="body-txt">일 평균 DAU 기준 무신사 106.2만 명(MoM <b>+12.2%</b>), 29CM 36.2만 명(MoM +7.8%), W컨셉 19.0만 명(MoM +13.0%)으로 세 앱 모두 증가했습니다. 무신사는 추석빅세일로 연휴에도 DAU가 올랐고, W컨셉·29CM은 연휴 기간 일시 감소했다가 이후 회복했습니다.</p>
+        <table class="rt" style="margin-top:8px;">
+          <thead><tr><th style="white-space:nowrap;">앱</th><th style="text-align:right; white-space:nowrap;">9월 일 평균 DAU</th><th style="text-align:right;">MoM</th><th>9월 프로모션 & 특징</th></tr></thead>
+          <tbody>
+            <tr class="me"><td class="name" style="white-space:nowrap;">W컨셉</td><td class="num">19.0만</td><td class="num" style="color:var(--teal);">+13.0%</td><td style="font-size:12.5px; color:var(--ink-dim);">1~3주차 어텀런웨이·W세레모니위크·추석연휴세일 연속 운영으로 DAU 20만 이상 수준 유지. 추석 연휴 기간 전략적 광고비 축소와 맞물려 트래픽이 줄었으나 연휴 이후 회복세 기록</td></tr>
+            <tr><td class="name" style="white-space:nowrap;">29CM</td><td class="num">36.2만</td><td class="num" style="color:var(--teal);">+7.8%</td><td style="font-size:12.5px; color:var(--ink-dim);">9/1~9/15 이구패션위크 운영을 중심으로 월 초중반 트래픽 상승세 견인. 추석 연휴 기간 DAU가 줄었으나 9/29 이구데이에 월 최고 트래픽을 기록하며 반등</td></tr>
+            <tr><td class="name" style="white-space:nowrap;">무신사</td><td class="num">106.2만</td><td class="num" style="color:var(--teal); font-weight:700;">+12.2%</td><td style="font-size:12.5px; color:var(--ink-dim);">9/21~9/27 2026 무신사 추석빅세일 운영 기간 일별 특가·브랜드 할인·참여형 이벤트로 연휴 구간에도 트래픽 상승. 9/27 연휴 마지막 날 DAU 141.8만 명으로 월 최고치 기록</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Usage day/time & demographics -->
+      <div class="subsec">
+        <h3 class="h3"><span class="num-tag">2</span>사용일수·사용시간 — 규모는 밀리지만 밀도는 여전히 W컨셉이 1위</h3>
+        <p class="body-txt">1인당 평균 사용일수는 <b>29CM(7.54일) &gt; W컨셉(7.43일) &gt; 무신사(6.98일)</b> 순이지만, 1인당 평균 사용시간은 <b>W컨셉(40.35분)이 29CM(33.22분)·무신사(32.0분)를 모두 앞섭니다.</b> 규모는 밀려도 '한 번 들어오면 오래 머무는' 밀도는 이번 달에도 W컨셉이 가장 견고합니다.</p>
+        <div class="grid-3">
+          <div class="panel"><div class="section-label">1인당 평균 사용일수</div><div style="font-size:20px; font-weight:700; margin-top:8px;" class="num">29CM 7.54일</div><div class="foot-note">W컨셉 7.43일 · 무신사 6.98일</div></div>
+          <div class="panel"><div class="section-label">1인당 평균 사용시간</div><div style="font-size:20px; font-weight:700; margin-top:8px;" class="num" style="color:var(--rose);">W컨셉 40.35분</div><div class="foot-note">29CM 33.22분 · 무신사 32.0분</div></div>
+          <div class="panel"><div class="section-label">네이버 검색 쿼리 (MoM)</div><div style="font-size:20px; font-weight:700; margin-top:8px;" class="num">W컨셉 +13.7%</div><div class="foot-note">29CM +18.5% · 무신사 +26.9%</div></div>
+        </div>
+        <p class="body-txt" style="margin-top:16px;"><b>9월 데모그래픽</b> — W컨셉은 여성 93%, 30대(36.5%) &gt; 20대(30.9%) &gt; 40대(25.4%) 순으로, YoY 기준 30·40대가 각각 +9%·+7% 늘고 10대 이하·20대는 줄며 <b>구매력 높은 3040 비중이 계속 확대</b>되고 있습니다. 29CM은 20대(35.6%) 중심이되 30대(+27%) 증가폭이 가장 크게 나타나며 2030 전 연령대가 고르게 성장 중이고, 무신사는 1020 중심(20대 35.8%, 10대 24.4%) 구조를 유지하되 3040(30대+16%, 40대+13%) 증가폭이 20대(+9%)를 상회합니다.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <hr class="divider">
+
+  <!-- INSIGHTS -->
+  <section id="insight">
+    <div class="eyebrow">Key Takeaways</div>
+    <h2 class="h">7. 이번 달 핵심 인사이트</h2>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <div class="k">01 · FW 시즌 진입 효과, 업종 전반으로 확산</div>
+        <div class="v">업종 전체 MAU가 MoM +2.1%로 두 달 연속 하락을 끝내고 반등했습니다. 11개 앱 중 9개가 MoM 플러스였고, 사용시간 급상승 TOP5에도 분석 대상 메이저 앱 4곳이 이름을 올리며 8월의 '니치 버티컬 강세'와는 상반된 흐름을 보였습니다.</div>
+      </div>
+      <div class="insight-card">
+        <div class="k">02 · KREAM이 29CM을 제치고 업종 5위로</div>
+        <div class="v">추적 대상 11개 앱 간 MAU 순위는 석 달째 그대로지만, 참고 앱을 포함한 업종 전체 순위에서는 KREAM(201.8만)이 29CM(201.0만)을 제치고 5위로 올라섰습니다. 격차는 0.4%에 불과해 다음 달 다시 뒤바뀔 수 있습니다. KREAM은 10월부터 HAGO를 대체해 경쟁앱 분석 대상에 추가할 예정입니다.</div>
+      </div>
+      <div class="insight-card">
+        <div class="k">03 · 지그재그 vs 퀸잇, 초박빙 승부가 한 달 만에 끝났다</div>
+        <div class="v">8월 사용시간 격차 0.8%의 공동 3위급 승부가 9월엔 22.1%로 벌어졌습니다. 지그재그는 신규 Install YoY +44.6%까지 겹치며 MAU·사용시간·성장률 모든 지표에서 우위를 확정했고, 퀸잇은 1인당 사용시간(42.7분)에서만 근소하게 앞섭니다.</div>
+      </div>
+      <div class="insight-card">
+        <div class="k">04 · HAGO, 서비스 종료 수순에 돌입</div>
+        <div class="v">9/15 패션플러스 통합 운영 발표 이후 10/1 신규 주문·회원가입이 중단됐고, 12/1 독립 서비스 종료가 예정돼 있습니다. MAU는 MoM -9.2%·YoY -34.9%로 11개 앱 중 최저치를 기록했고, 업종 순위도 2,500위 밖으로 떨어져 10월부터 경쟁앱 분석 대상에서 제외될 예정입니다.</div>
+      </div>
+      <div class="insight-card" style="grid-column:1 / -1;">
+        <div class="k">05 · W컨셉: MoM은 3사 중 최대, YoY는 제자리</div>
+        <div class="v">W컨셉의 9월 MoM +6.6%는 편집숍 계열 3사(W컨셉·무신사·29CM) 중 가장 큰 증가율로, 8월의 하락(-3.4%)에서 뚜렷하게 반등했습니다. 다만 YoY는 +0.2%에 그쳐 29CM(+16.5%)·무신사(+11.3%)의 두 자릿수 성장과는 격차가 있습니다. 사용시간 순위는 7위에서 6위로 한 단계 올랐고, 1인당 평균 사용시간(40.35분)은 이번 달에도 경쟁 3사 중 1위를 지켰습니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SOURCE -->
+  <footer>
+    <div class="eyebrow">Data &amp; Notes</div>
+    <h2 class="h" style="font-size:20px;">데이터 출처 및 유의사항</h2>
+    <table class="src">
+      <tr><td>앱별 MAU·사용시간·순위</td><td>모바일인덱스 INSIGHT — MI MCP 실시간 조회, 4,500만 DMP 기반 추정치</td></tr>
+      <tr><td>비교 기준</td><td>2026년 9월 vs 2026년 8월(MoM), 2025년 9월(YoY) — 일부 사용시간 MoM 수치는 앱별 1인당 평균 사용시간과 MAU를 곱해 추정</td></tr>
+      <tr><td>결제 금액·건수, 카테고리별 매출 비중</td><td>⚠️ 미지원 — 소비인덱스 별도 서비스</td></tr>
+      <tr><td>경쟁앱 교차 분석 대상 제외</td><td>HAGO — 9월 기준 트래픽 상위 2,500위 밖으로 순위 하락해 교차 분석 불가. 10월부터 경쟁앱 분석 대상에서도 제외 예정이며, KREAM이 대체 편입될 예정</td></tr>
+    </table>
+    <div class="foot-note">모든 수치는 모바일인덱스 INSIGHT의 추정치입니다.<br>최종 업데이트 2026-10-12</div>
+  </footer>
+
+</div>
+<script>
+/* ===================================================================
+   순수 SVG 차트 엔진 (외부 라이브러리 의존성 없음 — 완전 오프라인 동작)
+   =================================================================== */
+const SVGNS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){
+  const e = document.createElementNS(SVGNS, tag);
+  for(const k in (attrs||{})) if(attrs[k]!==undefined && attrs[k]!==null) e.setAttribute(k, attrs[k]);
+  if(parent) parent.appendChild(e);
+  return e;
+}
+/* proper "nice ticks" algorithm: returns {min,max,ticks[]} with a clean step, minimal wasted headroom */
+function niceTicks(minV, maxV, targetCount){
+  targetCount = targetCount || 5;
+  if(minV===maxV){ minV -= 1; maxV += 1; }
+  const range = maxV - minV;
+  const roughStep = range / targetCount;
+  const mag = Math.pow(10, Math.floor(Math.log10(roughStep)));
+  const norm = roughStep / mag;
+  let step;
+  if(norm <= 1.2) step = 1*mag;
+  else if(norm <= 2.5) step = 2*mag;
+  else if(norm <= 7) step = 5*mag;
+  else step = 10*mag;
+  const niceMinV = minV>=0 && minV<step ? 0 : Math.floor(minV/step)*step;
+  const niceMaxV = Math.ceil((maxV*1.02)/step)*step;
+  const ticks = [];
+  for(let v=niceMinV; v<=niceMaxV+step*1e-6; v+=step) ticks.push(Math.round(v*1e6)/1e6);
+  return {min:niceMinV, max:niceMaxV, step, ticks};
+}
+/* for signed/symmetric ranges (e.g. YoY% bars that can be +/-) */
+function niceTicksSigned(minV, maxV, targetCount){
+  if(minV>=0) return niceTicks(0, maxV, targetCount);
+  const t = niceTicks(0, Math.max(Math.abs(minV), Math.abs(maxV)), targetCount);
+  const ticks = t.ticks.slice(1).map(v=>-v).reverse().concat(t.ticks);
+  return {min:-t.max, max:t.max, step:t.step, ticks};
+}
+function fmtWon(n){ return (n/10000).toLocaleString('ko-KR',{maximumFractionDigits:0}) + '만'; }
+function fmtPct(n){ return (Math.round(n*10)/10) + '%'; }
+function fmtPctSigned(n){ const r=Math.round(n*10)/10; return (r>0?'+':'') + r + '%p'; }
+
+/* container helpers: mount svg sized to the ACTUAL rendered box (post-legend layout) */
+function mount(id){
+  const host = document.getElementById(id);
+  if(!host) return null;
+  host.innerHTML = '';
+  const wrap = document.createElement('div');
+  wrap.style.position='relative'; wrap.style.width='100%'; wrap.style.height='100%';
+  host.appendChild(wrap);
+  const W = Math.max(host.clientWidth, 100);
+  const H = Math.max(host.clientHeight, 60);
+  const svg = el('svg', {viewBox:`0 0 ${W} ${H}`, width:'100%', height:'100%', preserveAspectRatio:'none'});
+  wrap.appendChild(svg);
+  const tip = document.createElement('div');
+  tip.className = 'mc-tip';
+  wrap.appendChild(tip);
+  return {svg, tip, wrap, W, H};
+}
+function showTip(tip, wrap, evt, html){
+  tip.innerHTML = html;
+  const r = wrap.getBoundingClientRect();
+  const x = evt.clientX - r.left, y = evt.clientY - r.top;
+  tip.style.left = x+'px'; tip.style.top = (y-10)+'px'; tip.style.opacity='1';
+}
+function hideTip(tip){ tip.style.opacity='0'; }
+
+/* mount with a fixed-width vertical legend sidebar on the right (for scatter charts) */
+function mountSideLegend(id, items, legendWidth){
+  legendWidth = legendWidth || 118;
+  const host = document.getElementById(id);
+  host.innerHTML = '';
+  host.style.display='flex'; host.style.flexDirection='row'; host.style.alignItems='stretch';
+  const chartArea = document.createElement('div');
+  chartArea.style.cssText='position:relative; flex:1 1 auto; min-width:0; height:100%;';
+  const legendArea = document.createElement('div');
+  legendArea.style.cssText=`flex:0 0 ${legendWidth}px; display:flex; flex-direction:column; justify-content:flex-start; padding-top:6px; gap:9px; padding-left:12px; font-size:12px; color:#5c5f6b;`;
+  legendArea.innerHTML = items.map(it=>
+    `<span style="display:flex; align-items:center; gap:6px;"><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:${it.color}; flex-shrink:0;"></span>${it.label}</span>`
+  ).join('');
+  host.appendChild(chartArea); host.appendChild(legendArea);
+
+  const wrap = document.createElement('div');
+  wrap.style.position='relative'; wrap.style.width='100%'; wrap.style.height='100%';
+  chartArea.appendChild(wrap);
+  const W = Math.max(chartArea.clientWidth, 100);
+  const H = Math.max(chartArea.clientHeight, 60);
+  const svg = el('svg', {viewBox:`0 0 ${W} ${H}`, width:'100%', height:'100%', preserveAspectRatio:'none'});
+  wrap.appendChild(svg);
+  const tip = document.createElement('div');
+  tip.className = 'mc-tip';
+  wrap.appendChild(tip);
+  return {svg, tip, wrap, W, H};
+}
+
+function legendHTML(items){
+  return '<div class="mc-legend">' + items.map(it=>
+    `<span><span class="sw" style="background:${it.color};"></span>${it.label}</span>`
+  ).join('') + '</div>';
+}
+/* insert legend as a sibling BEFORE the chart div, inside the flex .chart-box,
+   so the chart div's flex:1 correctly shrinks to the remaining space */
+function putLegend(hostId, items){
+  const host = document.getElementById(hostId);
+  host.parentElement.querySelector('.mc-legend')?.remove();
+  const l = document.createElement('div');
+  l.innerHTML = legendHTML(items);
+  host.parentElement.insertBefore(l.firstChild, host);
+}
+
+/* Catmull-Rom -> cubic bezier smoothing for a point list [[x,y],...] */
+function smoothPath(pts, tension){
+  tension = tension===undefined? 0.85 : tension;
+  if(pts.length<3) return 'M'+pts.map(p=>p[0]+','+p[1]).join('L');
+  let d = `M${pts[0][0]},${pts[0][1]}`;
+  for(let i=0;i<pts.length-1;i++){
+    const p0 = pts[i-1]||pts[i];
+    const p1 = pts[i];
+    const p2 = pts[i+1];
+    const p3 = pts[i+2]||p2;
+    const cp1x = p1[0] + (p2[0]-p0[0])/6*tension;
+    const cp1y = p1[1] + (p2[1]-p0[1])/6*tension;
+    const cp2x = p2[0] - (p3[0]-p1[0])/6*tension;
+    const cp2y = p2[1] - (p3[1]-p1[1])/6*tension;
+    d += ` C${cp1x},${cp1y} ${cp2x},${cp2y} ${p2[0]},${p2[1]}`;
+  }
+  return d;
+}
+
+/* ---------- Multi-series line chart (curved, with optional area fill / dash) ---------- */
+function lineChart(hostId, {labels, series, yFmt, legend=true, xEvery=1, showXLabels=true, tickCount=5, combinedTooltip=false}){
+  if(legend) putLegend(hostId, series.map(s=>({color:s.color, label:s.label})));
+  const {svg, tip, wrap, W, H} = mount(hostId);
+  const perLabelSpace = W/labels.length;
+  const rotateLabels = showXLabels && perLabelSpace < 42;
+  const ML=68, MR=16, MT=16, MB= !showXLabels? 10 : (rotateLabels? 52 : 34);
+  const plotW = W-ML-MR, plotH = H-MT-MB;
+  let allVals = series.flatMap(s=>s.data);
+  const {min,max,ticks} = niceTicks(Math.min(...allVals), Math.max(...allVals), tickCount);
+  const xStep = plotW/(labels.length-1);
+  const yScale = v => MT + plotH - ((v-min)/(max-min))*plotH;
+  const xScale = i => ML + i*xStep;
+
+  ticks.forEach(v=>{
+    const y = yScale(v);
+    el('line',{x1:ML,x2:W-MR,y1:y,y2:y,stroke:'#e7e4da','stroke-width':1}, svg);
+    const txt = el('text',{x:ML-8,y:y+3,'text-anchor':'end','font-size':11.5,fill:'#9497a3'},svg);
+    txt.textContent = yFmt? yFmt(v) : v;
+  });
+  if(showXLabels) labels.forEach((lb,i)=>{
+    if(i%xEvery!==0 && i!==labels.length-1) return;
+    const lx = xScale(i), ly = H-MB+16;
+    const txt = el('text',{x:lx,y:ly,'text-anchor': rotateLabels?'end':'middle','font-size':11,fill:'#9497a3',
+      transform: rotateLabels? `rotate(-45 ${lx} ${ly})` : null},svg);
+    txt.textContent = lb;
+  });
+
+  series.forEach(s=>{
+    const pts = s.data.map((v,i)=>[xScale(i), yScale(v)]);
+    const curve = smoothPath(pts);
+    if(s.fill){
+      const areaPath = curve + ` L${xScale(labels.length-1)},${yScale(min)} L${ML},${yScale(min)} Z`;
+      el('path',{d:areaPath, fill:s.fillColor||s.color, opacity:0.10, stroke:'none'}, svg);
+    }
+    el('path',{d:curve, fill:'none', stroke:s.color, 'stroke-width':s.width||2.5,
+      'stroke-linejoin':'round','stroke-linecap':'round',
+      'stroke-dasharray': s.dash? '7,5' : null}, svg);
+    if(!combinedTooltip) pts.forEach((p,i)=>{
+      const hit = el('circle',{cx:p[0],cy:p[1],r:9,fill:'transparent'}, svg);
+      hit.addEventListener('mousemove', (e)=> showTip(tip, wrap, e, `<b>${labels[i]}</b><br>${s.label}: ${yFmt?yFmt(s.data[i]):s.data[i]}`));
+      hit.addEventListener('mouseleave', ()=>hideTip(tip));
+    });
+  });
+
+  if(combinedTooltip){
+    /* one invisible hit-column per month; hovering anywhere in that column
+       shows every series' value for that month together, like a Chart.js index tooltip */
+    labels.forEach((lb,i)=>{
+      const cx = xScale(i);
+      const left = Math.max(ML, cx-xStep/2), right = Math.min(W-MR, cx+xStep/2);
+      const hit = el('rect',{x:left, y:MT, width:Math.max(right-left,1), height:plotH, fill:'transparent'}, svg);
+      hit.addEventListener('mousemove', (e)=>{
+        const rows = series.map(s=>
+          `<div style="display:flex; align-items:center; gap:6px; margin-top:3px;">
+             <span style="width:8px; height:8px; border-radius:2px; background:${s.color}; display:inline-block; flex-shrink:0;"></span>
+             <span>${s.label}: ${yFmt?yFmt(s.data[i]):s.data[i]}</span>
+           </div>`).join('');
+        showTip(tip, wrap, e, `<b>${lb}</b>${rows}`);
+      });
+      hit.addEventListener('mouseleave', ()=>hideTip(tip));
+      /* thin guide line + dots at the hovered month for visual feedback */
+      const marker = el('line',{x1:cx,x2:cx,y1:MT,y2:MT+plotH, stroke:'#9497a3','stroke-width':1, opacity:0}, svg);
+      hit.addEventListener('mouseenter', ()=> marker.setAttribute('opacity','0.35'));
+      hit.addEventListener('mouseleave', ()=> marker.setAttribute('opacity','0'));
+    });
+  }
+}
+
+/* ---------- Vertical bar chart (single or grouped) ---------- */
+function barChart(hostId, {labels, series, yFmt, legend=false, colorPerBar=null, highlightIndex=-1, highlightColor='#b83227'}){
+  if(legend) putLegend(hostId, series.map(s=>({color:s.color, label:s.label})));
+  const {svg, tip, wrap, W, H} = mount(hostId);
+  const rotateLabels = labels.length > 6;
+  const ML=64, MR=14, MT=16, MB= rotateLabels? 60 : 38;
+  const plotW = W-ML-MR, plotH = H-MT-MB;
+  let allVals = series.flatMap(s=>s.data);
+  const {min,max,ticks} = niceTicks(Math.min(0,...allVals), Math.max(0,...allVals), 5);
+  const y0 = MT + plotH - ((0-min)/(max-min))*plotH;
+  const yScale = v => MT + plotH - ((v-min)/(max-min))*plotH;
+
+  ticks.forEach(v=>{
+    const y = yScale(v);
+    el('line',{x1:ML,x2:W-MR,y1:y,y2:y,stroke:'#e7e4da','stroke-width':1}, svg);
+    const txt = el('text',{x:ML-8,y:y+3,'text-anchor':'end','font-size':11.5,fill:'#9497a3'},svg);
+    txt.textContent = yFmt? yFmt(v) : v;
+  });
+
+  const n = labels.length, groupW = plotW/n, nS = series.length;
+  const barGap = groupW*0.18, barW = (groupW - barGap*2)/nS;
+  labels.forEach((lb,i)=>{
+    const lx = ML+groupW*i+groupW/2, ly = H-MB+16;
+    const txt = el('text',{x:lx, y:ly,'text-anchor': rotateLabels?'end':'middle','font-size':11,fill:'#9497a3',
+      transform: rotateLabels? `rotate(-40 ${lx} ${ly})` : null},svg);
+    txt.textContent = lb;
+  });
+  series.forEach((s,si)=>{
+    s.data.forEach((v,i)=>{
+      const x = ML + groupW*i + barGap + si*barW;
+      const y = yScale(v), h = Math.abs(y-y0);
+      const yTop = v>=0? y : y0;
+      const color = s.colors ? s.colors[i] : (colorPerBar ? colorPerBar[i] : s.color);
+      const rect = el('rect',{x:x, y:yTop, width:Math.max(barW*0.86,2), height:Math.max(h,1.5), rx:4, fill:color}, svg);
+      if(i===highlightIndex && nS===1){ rect.setAttribute('stroke', highlightColor); rect.setAttribute('stroke-width',2.5); }
+      rect.addEventListener('mousemove',(e)=>showTip(tip, wrap, e, `<b>${labels[i]}</b>${s.label?(' · '+s.label):''}: ${yFmt?yFmt(v):v}`));
+      rect.addEventListener('mouseleave',()=>hideTip(tip));
+    });
+  });
+  el('line',{x1:ML,x2:W-MR,y1:y0,y2:y0,stroke:'#c9c4b8','stroke-width':1.3}, svg);
+}
+
+/* ---------- Horizontal bar chart ---------- */
+function hBarChart(hostId, {labels, data, colors, yFmt, barHeightRatio=0.6}){
+  const {svg, tip, wrap, W, H} = mount(hostId);
+  const ML=108, MR=58, MT=10, MB=28;
+  const plotW = W-ML-MR, plotH = H-MT-MB;
+  const {min,max,ticks} = niceTicks(Math.min(0,...data), Math.max(0,...data), 4);
+  const x0 = ML + ((0-min)/(max-min))*plotW;
+  const xScale = v => ML + ((v-min)/(max-min))*plotW;
+
+  ticks.forEach(v=>{
+    const x = xScale(v);
+    el('line',{x1:x,x2:x,y1:MT,y2:H-MB,stroke:'#e7e4da','stroke-width':1}, svg);
+    const txt = el('text',{x:x,y:H-MB+14,'text-anchor':'middle','font-size':11,fill:'#9497a3'},svg);
+    txt.textContent = yFmt? yFmt(v) : v;
+  });
+  const rowH = plotH/labels.length;
+  labels.forEach((lb,i)=>{
+    const cy = MT + rowH*i + rowH/2;
+    const txt = el('text',{x:ML-10,y:cy+4,'text-anchor':'end','font-size':11.5,fill:'#17181d','font-weight':600},svg);
+    txt.textContent = lb;
+    const v = data[i];
+    const x = xScale(v), w = Math.abs(x-x0);
+    const xLeft = v>=0? x0 : x;
+    const rect = el('rect',{x:xLeft, y:cy-rowH*barHeightRatio/2, width:Math.max(w,1.5), height:rowH*barHeightRatio, rx:5, fill:colors[i]}, svg);
+    rect.addEventListener('mousemove',(e)=>showTip(tip, wrap, e, `<b>${lb}</b>: ${yFmt?yFmt(v):v}`));
+    rect.addEventListener('mouseleave',()=>hideTip(tip));
+    const labelX = v>=0? x+8 : x-8;
+    const vt = el('text',{x:labelX, y:cy+4, 'text-anchor': v>=0?'start':'end', 'font-size':11.5, fill:'#5c5f6b'},svg);
+    vt.textContent = yFmt? yFmt(v) : v;
+  });
+  el('line',{x1:x0,x2:x0,y1:MT,y2:H-MB,stroke:'#c9c4b8','stroke-width':1.3}, svg);
+}
+
+/* ---------- Grouped horizontal bar (multi-series), e.g. persona charts ---------- */
+function hBarGrouped(hostId, {labels, series, yFmt, tickMin, tickMax, tickStep}){
+  putLegend(hostId, series.map(s=>({color:s.color, label:s.label})));
+  const {svg, tip, wrap, W, H} = mount(hostId);
+  const ML=118, MR=62, MT=10, MB=28;
+  const plotW = W-ML-MR, plotH = H-MT-MB;
+  let allVals = series.flatMap(s=>s.data);
+  let min, max, ticks;
+  if(tickMax!==undefined){
+    min = tickMin!==undefined? tickMin : 0;
+    max = tickMax;
+    ticks = [];
+    for(let v=min; v<=max+1e-6; v+=tickStep) ticks.push(Math.round(v*1e6)/1e6);
+  } else {
+    ({min,max,ticks} = niceTicks(Math.min(0,...allVals), Math.max(0,...allVals), 5));
+  }
+  const x0 = ML + ((0-min)/(max-min))*plotW;
+  const xScale = v => ML + ((v-min)/(max-min))*plotW;
+
+  ticks.forEach(v=>{
+    const x = xScale(v);
+    el('line',{x1:x,x2:x,y1:MT,y2:H-MB,stroke:'#e7e4da','stroke-width':1}, svg);
+    const txt = el('text',{x:x,y:H-MB+14,'text-anchor':'middle','font-size':11,fill:'#9497a3'},svg);
+    txt.textContent = yFmt? yFmt(v) : v;
+  });
+  const n=labels.length, rowH = plotH/n, nS=series.length, barGap=rowH*0.12, barH=(rowH-barGap*2)/nS;
+  labels.forEach((lb,i)=>{
+    const cy = MT + rowH*i + rowH/2;
+    const txt = el('text',{x:ML-10,y:cy+4,'text-anchor':'end','font-size':11.5,fill:'#17181d','font-weight':600},svg);
+    txt.textContent = lb;
+  });
+  series.forEach((s,si)=>{
+    s.data.forEach((v,i)=>{
+      const y = MT + rowH*i + barGap + si*barH;
+      const x = xScale(v), w = Math.abs(x-x0);
+      const xLeft = v>=0? x0 : x;
+      const rect = el('rect',{x:xLeft, y:y, width:Math.max(w,1.5), height:Math.max(barH*0.82,1), rx:3, fill:s.color}, svg);
+      rect.addEventListener('mousemove',(e)=>showTip(tip, wrap, e, `<b>${labels[i]}</b><br>${s.label}: ${yFmt?yFmt(v):v}`));
+      rect.addEventListener('mouseleave',()=>hideTip(tip));
+    });
+  });
+  el('line',{x1:x0,x2:x0,y1:MT,y2:H-MB,stroke:'#c9c4b8','stroke-width':1.3}, svg);
+}
+
+/* ---------- Scatter chart ---------- */
+function scatterChart(hostId, {points, xLabel, yLabel, diagonal=false, legend=true, sharedScale=false}){
+  const mounted = legend ? mountSideLegend(hostId, points.map(p=>({color:p.color, label:p.name})), 132) : mount(hostId);
+  const {svg, tip, wrap, W, H} = mounted;
+  const ML=60, MR=16, MT=16, MB=48;
+  const plotW = W-ML-MR, plotH = H-MT-MB;
+  const xs = points.map(p=>p.x), ys = points.map(p=>p.y);
+  let xr, yr;
+  if(sharedScale){
+    const shared = niceTicks(Math.min(0,...xs,...ys), Math.max(...xs,...ys), 6);
+    xr = shared; yr = shared;
+  } else {
+    xr = niceTicks(Math.min(0,...xs), Math.max(...xs), 5);
+    yr = niceTicks(Math.min(0,...ys), Math.max(...ys), 5);
+  }
+  const xScale = v => ML + ((v-xr.min)/(xr.max-xr.min))*plotW;
+  const yScale = v => MT + plotH - ((v-yr.min)/(yr.max-yr.min))*plotH;
+
+  xr.ticks.forEach(vx=>{
+    const x = xScale(vx);
+    el('line',{x1:x,x2:x,y1:MT,y2:H-MB,stroke:'#e7e4da','stroke-width':1}, svg);
+    const txt=el('text',{x:x,y:H-MB+16,'text-anchor':'middle','font-size':11,fill:'#9497a3'},svg); txt.textContent=Math.round(vx*10)/10;
+  });
+  yr.ticks.forEach(vy=>{
+    const y = yScale(vy);
+    el('line',{x1:ML,x2:W-MR,y1:y,y2:y,stroke:'#e7e4da','stroke-width':1}, svg);
+    const txt2=el('text',{x:ML-8,y:y+3,'text-anchor':'end','font-size':11,fill:'#9497a3'},svg); txt2.textContent=Math.round(vy*10)/10;
+  });
+  el('text',{x:ML+plotW/2,y:H-8,'text-anchor':'middle','font-size':11.5,fill:'#5c5f6b'},svg).textContent = xLabel||'';
+  const yl = el('text',{x:12,y:MT+plotH/2,'text-anchor':'middle','font-size':11.5,fill:'#5c5f6b', transform:`rotate(-90 12 ${MT+plotH/2})`},svg);
+  yl.textContent = yLabel||'';
+
+  if(diagonal){
+    /* draw y=x only across the region where BOTH axes overlap in data space,
+       so the line never extrapolates outside the plotted rectangle */
+    const t0 = Math.max(xr.min, yr.min), t1 = Math.min(xr.max, yr.max);
+    el('line',{x1:xScale(t0),y1:yScale(t0),x2:xScale(t1),y2:yScale(t1),
+      stroke:'#c9c4b8','stroke-width':1.3,'stroke-dasharray':'6,5'}, svg);
+  }
+  points.forEach(p=>{
+    const cx=xScale(p.x), cy=yScale(p.y);
+    const r = p.big? 9 : 6.5;
+    const c = el('circle',{cx,cy,r, fill:p.color, stroke:p.big?'#7a2038':'none','stroke-width':p.big?2:0}, svg);
+    c.addEventListener('mousemove',(e)=>showTip(tip, wrap, e, `<b>${p.name}</b><br>${p.tipText||(xLabel+': '+p.x+' · '+yLabel+': '+p.y)}`));
+    c.addEventListener('mouseleave',()=>hideTip(tip));
+  });
+}
+
+/* ---------- Doughnut chart ---------- */
+function doughnutChart(hostId, {data, colors, labels}){
+  const host = document.getElementById(hostId);
+  host.parentElement.querySelector('.mc-legend')?.remove();
+  const {svg, tip, wrap, W, H} = mount(hostId);
+  const legendEl = document.createElement('div');
+  legendEl.className = 'mc-legend';
+  legendEl.style.justifyContent = 'center';
+  legendEl.style.marginTop = '8px';
+  legendEl.style.marginBottom = '0';
+  legendEl.innerHTML = labels.map((l,i)=>
+    `<span><span class="sw" style="background:${colors[i]};"></span>${l} (${data[i]}%)</span>`
+  ).join('');
+  host.parentElement.appendChild(legendEl);
+  const cx=W/2, cy=H/2, rOuter=Math.min(W,H)/2*0.78, rInner=rOuter*0.6;
+  const total = data.reduce((a,b)=>a+b,0);
+  let ang = -Math.PI/2;
+  data.forEach((v,i)=>{
+    const frac = v/total;
+    const a2 = ang + frac*2*Math.PI;
+    const large = (a2-ang)>Math.PI ? 1:0;
+    const x1=cx+rOuter*Math.cos(ang), y1=cy+rOuter*Math.sin(ang);
+    const x2=cx+rOuter*Math.cos(a2), y2=cy+rOuter*Math.sin(a2);
+    const x3=cx+rInner*Math.cos(a2), y3=cy+rInner*Math.sin(a2);
+    const x4=cx+rInner*Math.cos(ang), y4=cy+rInner*Math.sin(ang);
+    const d = `M${x1},${y1} A${rOuter},${rOuter} 0 ${large} 1 ${x2},${y2} L${x3},${y3} A${rInner},${rInner} 0 ${large} 0 ${x4},${y4} Z`;
+    const path = el('path',{d, fill:colors[i]}, svg);
+    path.addEventListener('mousemove',(e)=>showTip(tip, wrap, e, `<b>${labels[i]}</b>: ${v}%`));
+    path.addEventListener('mouseleave',()=>hideTip(tip));
+    ang = a2;
+  });
+}
+
+/* ---------- Sparkline (minimal, no axes, curved) ---------- */
+function sparkline(hostId, {data, color}){
+  const {svg, W, H} = mount(hostId);
+  const pad=6;
+  const min=Math.min(...data), max=Math.max(...data);
+  const xStep=(W-pad*2)/(data.length-1);
+  const yScale = v => pad + (H-pad*2) - ((v-min)/((max-min)||1))*(H-pad*2);
+  const pts = data.map((v,i)=>[pad+i*xStep, yScale(v)]);
+  el('path',{d:smoothPath(pts), fill:'none', stroke:color, 'stroke-width':2.5, 'stroke-linejoin':'round','stroke-linecap':'round'}, svg);
+}
+
+</script>
+<script>
+const months = ['25.09','25.10','25.11','25.12','26.01','26.02','26.03','26.04','26.05','26.06','26.07','26.08','26.09'];
+
+const COLORS = {
+  musinsa:'#0d9488', ably:'#c2486b', zigzag:'#c98a3f', queenit:'#7c6bb0',
+  cm29:'#4c72b0', wconcept:'#9b7cb8', ssf:'#5a9367', lfmall:'#8d6e63',
+  sinsegae:'#a8524a', eql:'#8a8f99', hago:'#3b4657', gridline:'#e7e4da'
+};
+
+const APP = {
+  zigzag: {name:'지그재그', color:COLORS.zigzag,
+    mau:[3279258,3535866,3601346,3391358,3159820,3116368,3773366,3614162,3668237,3925959,3654002,3752324,4002105]},
+  queenit: {name:'퀸잇', color:COLORS.queenit,
+    mau:[2667347,2743379,3280830,2992295,2892985,2696848,3152406,3344487,3197861,3195389,3221550,3115210,3019953]},
+  wconcept: {name:'W컨셉', color:COLORS.wconcept,
+    mau:[1042267,1086223,1213287,993233,925978,886166,1021059,978742,1050417,1192715,1015131,980182,1044508]}
+};
+
+const kfmt = (n) => (n/10000).toLocaleString('ko-KR',{maximumFractionDigits:0}) + '만';
+
+const growthLabels = ['무신사','에이블리','지그재그','퀸잇','29CM','W컨셉','SSF SHOP','LFmall','신세계V','EQL','HAGO'];
+const mom = [3.36,3.76,6.66,-3.06,1.82,6.56,15.27,9.52,24.02,7.50,-9.24];
+const yoy = [11.32,15.99,22.04,13.22,16.45,0.22,15.45,4.96,19.40,2.17,-34.92];
+
+/* 차트는 mount() 시점의 컨테이너 크기를 SVG viewBox에 그대로 고정한다.
+   이후 창 크기 변경·패널 리사이즈·폰트 스왑 등으로 실제 박스 크기가 달라지면
+   preserveAspectRatio:'none' 특성상 내부 텍스트가 눌리거나 늘어나 보인다.
+   그래서 모든 차트를 하나의 함수로 묶어 최초 로드 후(폰트 확정 시점)와
+   리사이즈 시점마다 다시 그려 viewBox를 현재 박스 크기에 맞게 재동기화한다. */
+function renderCharts(){
+  /* 1. industry trend */
+  lineChart('chartTrend', {
+    labels: months, xEvery:1, yFmt: fmtWon, combinedTooltip:true,
+    series:[
+      {label:'패션/의류 업종 전체', color:COLORS.musinsa, fill:true, fillColor:COLORS.musinsa,
+        data:[17103586,18108499,18919710,18007097,17175963,16931700,18178103,18278869,18787442,18908912,18394149,18062896,18441978]},
+      {label:'종합패션몰(소분류)', color:COLORS.wconcept, dash:true,
+        data:[10845065,11871737,12908266,11548769,10776925,10708651,11431527,11332996,11835988,12175407,11333663,11070616,11424373]}
+    ]
+  });
+
+  /* 3. growth MoM vs YoY */
+  barChart('chartGrowth', {
+    labels: growthLabels, yFmt: v=>Math.round(v)+'%', legend:true,
+    series:[
+      {label:'MoM(전월비)', color:'#a8305c', colors: growthLabels.map(n=>n==='W컨셉'?'#7a2038':'#c2486b'), data:mom},
+      {label:'YoY(전년비)', color:'#9b7cb8', colors: growthLabels.map(n=>n==='W컨셉'?'#5c4785':'#9b7cb8'), data:yoy}
+    ]
+  });
+
+  /* 4. duel: zigzag vs queenit */
+  lineChart('chartDuel', {
+    labels: months, xEvery:1, yFmt: fmtWon, combinedTooltip:true,
+    series:[
+      {label:'지그재그', color:COLORS.zigzag, data:APP.zigzag.mau},
+      {label:'퀸잇', color:COLORS.queenit, data:APP.queenit.mau}
+    ]
+  });
+
+  /* 5. W컨셉 solo */
+  lineChart('chartWSolo', {
+    labels: months, yFmt: fmtWon, legend:false,
+    series:[{label:'W컨셉', color:COLORS.wconcept, fill:true, fillColor:COLORS.wconcept, data:APP.wconcept.mau}]
+  });
+}
+
+renderCharts();
+if(document.fonts && document.fonts.ready){ document.fonts.ready.then(renderCharts); }
+window.addEventListener('load', renderCharts);
+let __chartResizeT;
+window.addEventListener('resize', function(){
+  clearTimeout(__chartResizeT);
+  __chartResizeT = setTimeout(renderCharts, 150);
+});
+</script>
+</body>
+</html>
